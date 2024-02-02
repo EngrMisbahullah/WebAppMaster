@@ -90,8 +90,8 @@
                 <div class="col-md-4 col-lg-2 col-xl-2 col-xxl-2">
                     <div class="mid-title">COMPANY</div>
                     <div class="link">
-                        <div><a [routerLink]="['/aboutus']" class="link">About Us</a></div>
-                        <div><a [routerLink]="['/faqs']" class="link">FAQs</a></div>
+                        <div><a href="/aboutus" class="link">About Us</a></div>
+                        <div><a href="/faqs" class="link">FAQs</a></div>
                         <div><a href="#nine-step-section" class="link">Contact Us</a></div>
 
                     </div>
@@ -99,14 +99,14 @@
                 <div class="col-md-6 col-lg-2 col-xl-2 col-xxl-2">
                     <div class="mid-title">MY ACCOUNT</div>
                     <div class="link">
-                        <div><a [routerLink]="['/myorder',loggedInUserID]" class="link" *ngIf="loggedInUserID" (click)="scrollToTop()">My
+                        <div><a href="/myorder',loggedInUserI" class="link" *ngIf="loggedInUserID" (click)="scrollToTop()">My
                                 Order</a></div>
-                        <div><a [routerLink]="['/login']" class="link" *ngIf="!loggedInUserID"  >My Order</a></div>
+                        <div><a href="/login" class="link" *ngIf="!loggedInUserID"  >My Order</a></div>
 
-                        <div><a [routerLink]="['/login']" class="link" *ngIf="!loggedInUserID"  >My Wishlist</a></div>
-                        <div><a [routerLink]="['/add-to-wishlist',loggedInUserID]" class="link" *ngIf="loggedInUserID" (click)="scrollToTop()">My Wishlist</a></div>
+                        <div><a href="/login" class="link" *ngIf="!loggedInUserID"  >My Wishlist</a></div>
+                        <div><a href="/add-to-wishlist',loggedInUserI" class="link" *ngIf="loggedInUserID" (click)="scrollToTop()">My Wishlist</a></div>
 
-                        <div><a [routerLink]="['/login']" class="link" *ngIf="!loggedInUserID"  >Login/Register</a></div>
+                        <div><a href="/login" class="link" *ngIf="!loggedInUserID"  >Login/Register</a></div>
 
 
                     </div>
@@ -115,8 +115,8 @@
                 <div class="col-md-6 col-lg-2 col-xl-2 col-xxl-2">
                     <div class="mid-title">CUSTOMER SERVICE</div>
                     <div class="link">
-                        <div><a [routerLink]="['/privacy-policy']"  class="link">Privacy Policy</a></div>
-                        <div><a [routerLink]="['/request']" class="link">Request</a></div>
+                        <div><a href="/privacy-policy"  class="link">Privacy Policy</a></div>
+                        <div><a href="/request" class="link">Request</a></div>
 
                     </div>
                 </div>
