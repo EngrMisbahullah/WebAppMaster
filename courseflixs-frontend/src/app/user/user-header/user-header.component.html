@@ -1,0 +1,227 @@
+<app-get-in-touch-dialogue></app-get-in-touch-dialogue>
+
+<app-tawk></app-tawk>
+<!-- Button trigger modal -->
+<button type="button" [hidden]="true" #openModelBtn class="btn btn-primary" data-bs-toggle="modal"
+    data-bs-target="#automatic-open-dialogue">
+    Auto open dialogue
+</button>
+
+<!-- Modal -->
+<div class="automatic-open-dialogue">
+    <div class="modal fade" id="automatic-open-dialogue" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="top-close-btn">
+                    <button type="button" #automaticCloseBtn class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close" style="color: white;"></button>
+                </div>
+                <div class="modal-body">
+                <div class="modal-title">
+                    SUBSCRIBE TO GET COMPLIMENTARY PRODUCT
+                </div>
+                <div class="modal-form">
+                    <form [formGroup]="subscribedForm" (submit)="addSubscriber()">
+                        <mat-form-field>
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Email" formControlName="email" required>
+                            <mat-error style="color: white; font-weight: 800;">Enter Valid Email</mat-error>
+                        </mat-form-field>
+                        <div class="modal-subsribed-btn">
+                            <button type="submit" class="subscribe" [disabled]="subscribedForm.invalid">YES, LET ME IN</button>
+                        </div>
+                        <div class="bottom-modal-info">
+                            We don't spam! Read our <a routerLink="/privacy-policy">privacy policy</a> for more info.
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row top-header">
+        <div class="col-xl-8 col-lg-8 ">
+            <div class="top-header-link">
+                <a routerLink="/login" *ngIf="!loggedInUserID"><mat-icon>lock</mat-icon> LOGIN/REGISTER</a>
+                <a (click)="logoutUser()" routerLink="/" *ngIf="loggedInUserID"><mat-icon>logout</mat-icon> LOGOUT</a>
+
+                <a [routerLink]="['/add-to-wishlist',loggedInUserID]"
+                    *ngIf="loggedInUserID"><mat-icon>favorite</mat-icon>WISHLIST</a>
+                <a [routerLink]="['/login']" *ngIf="!loggedInUserID"><mat-icon>favorite</mat-icon>WISHLIST</a>
+                <a [routerLink]="['/myorder',loggedInUserID]"
+                    *ngIf="loggedInUserID"><mat-icon>shop</mat-icon>MYORDER</a>
+                <a [routerLink]="['/login']" *ngIf="!loggedInUserID"><mat-icon>shop</mat-icon>MYORDER</a>
+
+
+                <a routerLink="/blogs"><mat-icon>book</mat-icon>BLOG</a>
+                <a routerLink="/faqs"><mat-icon>quiz</mat-icon>FAQ</a>
+                <a href="#testimonial-section"><mat-icon>quiz</mat-icon>TESTIMONIAL</a>
+                <a routerLink="/aboutus"><mat-icon>info</mat-icon>About Us</a>
+
+
+
+
+            </div>
+        </div>
+        <div class="col-xl-2 col-lg-2 "></div>
+        <div class="col-xl-2 col-lg-2">
+            <div class="top-header-Social-link">
+                <a href="https://www.reddit.com/user/Chillax905/"
+                    target="_blank"><mat-icon>reddit</mat-icon></a>
+                <a href="https://t.me/CourseGuy65" target="_blank"><mat-icon>telegram</mat-icon></a>
+                <a href="mailto:helpdeskcourseflix@gmail.com" target="_blank"><mat-icon>email</mat-icon></a>
+            </div>
+        </div>
+
+    </div>
+    <div class="row " [ngClass]="{ 'fixed-menu ': isMenuFixed }">
+        <nav class="navbar navbar-dark bg-dark" style="padding: 0px;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="../../../assets/logo.png" alt="user-logo" class="user-logo"
+                        style="height: 6rem;"></a>
+
+                <div class="main-menu">
+                    <a routerLink="/" routerLinkActive="list-item-active">HOME</a>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <mat-icon>category</mat-icon> CATEGORY
+                        </a>
+                        <ul class="dropdown-menu" *ngIf="proCategory">
+                            <li *ngFor="let cat of proCategory"><a class="dropdown-item"
+                                    (click)="redirectToProducts(cat._id)">{{cat.category_name}}</a></li>
+                        </ul>
+                    </div>
+                    <a href="#offer-section" routerLinkActive="list-item-active" ><mat-icon>help</mat-icon>WHY US?</a>
+                    <a routerLink="/request" routerLinkActive="list-item-active"><mat-icon>hail</mat-icon>REQUEST</a>
+                    <a href="#nine-step-section"
+                        routerLinkActive="list-item-active"><mat-icon>contacts</mat-icon>CONTACT US</a>
+
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item d-flex">
+                            <div class="collapse position-absolute w-50 px-3" id="searchForm" style="margin-left: 50%;">
+                                <div class="d-flex shadow-sm align-items-center">
+                                    <input id="search" type="text"
+                                        class="form-control form-control-lg bg-light border-0 " placeholder="search"
+                                        [(ngModel)]="searchBy" (input)="getSearchResult()" />
+                                    <a class="nav-link py-2 bg-light" href="#searchForm" data-bs-target="#searchForm"
+                                        data-bs-toggle="collapse">
+                                        <mat-icon style="color: black;">close</mat-icon>
+                                    </a>
+                                </div>
+                            </div>
+                            <a class="nav-link mr-auto" href="#searchForm" data-bs-target="#searchForm"
+                                data-bs-toggle="collapse">
+                                <mat-icon>search</mat-icon>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDarkNavbar"
+                    aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <!-- <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5> -->
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body pb-5">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 mb-5">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" routerLink="/"
+                                    routerLinkActive="list-item-active" data-bs-dismiss="offcanvas"><mat-icon>home</mat-icon>HOME</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" routerLinkActive="list-item-active" role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"><mat-icon>category</mat-icon>CATEGORY</a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li *ngFor="let cat of proCategory">
+                                        <a class="dropdown-item" data-bs-dismiss="offcanvas" aria-label="Close" 
+                                            (click)="redirectToProducts(cat._id)">{{cat.category_name}}</a>
+                                        <hr class="dropdown-divider">
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#offer-section" 
+                                    routerLinkActive="list-item-active" ><mat-icon>help</mat-icon>WHY US?</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/request"
+                                    routerLinkActive="list-item-active" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"><mat-icon>accessible</mat-icon>REQUEST</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#nine-step-section"
+                                    routerLinkActive="list-item-active" ><mat-icon>contacts</mat-icon>CONTACT US</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a [routerLink]="['/myorder',loggedInUserID]" *ngIf="loggedInUserID"
+                                    class="nav-link" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"><mat-icon>shop</mat-icon>MYORDER</a>
+                                <a [routerLink]="['/login']" *ngIf="!loggedInUserID"
+                                    class="nav-link"data-bs-dismiss="offcanvas"
+                                    aria-label="Close"><mat-icon>shop</mat-icon>MYORDER</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a [routerLink]="['/add-to-wishlist',loggedInUserID]" *ngIf="loggedInUserID" data-bs-dismiss="offcanvas" aria-label="Close" class="nav-link"><mat-icon>favorite</mat-icon>WISHLIST</a>
+                                <a [routerLink]="['/login']" *ngIf="!loggedInUserID"
+                                data-bs-dismiss="offcanvas" aria-label="Close"   class="nav-link"><mat-icon>favorite</mat-icon>WISHLIST</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/blogs"
+                                data-bs-dismiss="offcanvas" aria-label="Close"  routerLinkActive="list-item-active"><mat-icon>book</mat-icon>BLOG</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/faqs"
+                                data-bs-dismiss="offcanvas" aria-label="Close"  routerLinkActive="list-item-active"><mat-icon>quiz</mat-icon>FAQ</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#testimonial-section"
+                                 routerLinkActive="list-item-active"><mat-icon>quiz</mat-icon>TESTIMONIAL</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/aboutus"
+                                data-bs-dismiss="offcanvas" aria-label="Close" routerLinkActive="list-item-active"><mat-icon>info</mat-icon>ABOUT US</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/login" routerLinkActive="list-item-active"
+                                data-bs-dismiss="offcanvas" aria-label="Close"  *ngIf="!loggedInUserID"><mat-icon>lock</mat-icon>LOGIN/REGISTER</a>
+                                <a class="nav-link" routerLink="/" (click)="logoutUser()"
+                                data-bs-dismiss="offcanvas" aria-label="Close"   *ngIf="loggedInUserID"><mat-icon>logout</mat-icon> LOGOUT</a>
+                            </li>
+                            <li class="nav-item d-flex">
+                                <div class="d-flex shadow-sm align-items-center">
+                                    <input id="search" type="text"
+                                        class="form-control form-control-lg bg-light border-0 " placeholder="search"
+                                        [(ngModel)]="searchBy" />
+                                    <a class="nav-link py-2 bg-light" data-bs-target="#searchForm"
+                                        data-bs-toggle="collapse" data-bs-dismiss="offcanvas" aria-label="Close" >
+                                        <mat-icon style="color: black;" (click)="getSearchResult()" data-bs-dismiss="offcanvas">search</mat-icon>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>

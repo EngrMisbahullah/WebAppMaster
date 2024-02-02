@@ -1,0 +1,468 @@
+.main-offer-container {
+  background: linear-gradient(rgba(5, 4, 4, 0.5), rgba(9, 8, 8, 0.5)), url('../../../assets/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+
+
+}
+
+.main-offer-section {
+  padding: 4rem 0rem;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.offer-title {
+  font-size: 2rem;
+  padding-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 5rem;
+  line-height: 2.5rem;
+
+}
+
+.offer-title::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 40%;
+  height: 3px;
+  background-color: #FF3A2D;
+}
+
+/* Type writer text with animation  */
+
+/* Typewriter effect 1 */
+@keyframes typing {
+
+  0.0000%,
+  27.3488% {
+    content: "";
+  }
+
+  1.1395%,
+  26.2093% {
+    content: "N";
+  }
+
+  2.2791%,
+  25.0698% {
+    content: "NE";
+  }
+
+  3.4186%,
+  23.9302% {
+    content: "NEV";
+  }
+
+  4.5581%,
+  22.7907% {
+    content: "NEVE";
+  }
+
+  5.6977%,
+  21.6512% {
+    content: "NEVER";
+  }
+
+  6.8372%,
+  20.5116% {
+    content: "NEVER ";
+  }
+
+  7.9767%,
+  19.3721% {
+    content: "NEVER L";
+  }
+
+  9.1163%,
+  18.2326% {
+    content: "NEVER LE";
+  }
+
+  10.2558%,
+  17.3230% {
+    content: "NEVER LEA";
+  }
+
+  11.2558%,
+  16.5330% {
+    content: "NEVER LEAV";
+  }
+
+  12.2558%,
+  15.5430% {
+    content: "NEVER LEAVE";
+  }
+
+
+
+
+  30.7674%,
+  51.2791% {
+    content: "";
+  }
+
+  31.9070%,
+  50.1395% {
+    content: "S";
+  }
+
+  33.0465%,
+  49.0000% {
+    content: "ST";
+  }
+
+  34.1860%,
+  47.8605% {
+    content: "STA";
+  }
+
+  35.3256%,
+  46.7209% {
+    content: "STAY";
+  }
+
+  36.4651%,
+  45.5814% {
+    content: "STAY ";
+  }
+
+  37.6047%,
+  44.4419% {
+    content: "STAY H";
+  }
+
+  38.8047%,
+  43.2419% {
+    content: "STAY HE";
+  }
+
+  39.8047%,
+  42.5419% {
+    content: "STAY HER";
+  }
+
+  40.1047%,
+  41.8819% {
+    content: "STAY HERE";
+  }
+
+
+  50.6977%,
+  99.2093% {
+    content: "";
+  }
+
+  51.8372%,
+  98.0698% {
+    content: "B";
+  }
+
+  52.9767%,
+  97.9302% {
+    content: "BE";
+  }
+
+  53.1163%,
+  96.7907% {
+    content: "BE ";
+  }
+
+  54.2558%,
+  95.6512% {
+    content: "BE A";
+  }
+
+  55.3953%,
+  94.5116% {
+    content: "BE A ";
+  }
+
+  56.5349%,
+  93.3721% {
+    content: "BE A P";
+  }
+
+  57.4635%,
+  92.5676% {
+    content: "BE A PA";
+  }
+
+  58.3845%,
+  91.7426% {
+    content: "BE A PAR";
+  }
+
+  59.5422%,
+  90.1351% {
+    content: "BE A PART";
+  }
+
+  60.8978%,
+  89.5621% {
+    content: "BE A PART ";
+  }
+
+  61.1234%,
+  88.3443% {
+    content: "BE A PART O";
+  }
+
+  62.4435%,
+  87.6766% {
+    content: "BE A PART OF";
+  }
+
+  63.7756%,
+  86.8923% {
+    content: "BE A PART OF ";
+  }
+
+  64.5678%,
+  85.1432% {
+    content: "BE A PART OF O";
+  }
+
+  65.3434%,
+  84.3241% {
+    content: "BE A PART OF OU";
+  }
+
+  66.9348%,
+  83.4132% {
+    content: "BE A PART OF OUR";
+  }
+
+  67.3473%,
+  82.2341% {
+    content: "BE A PART OF OUR ";
+  }
+  68.6945%,
+  81.8978% {
+    content: "BE A PART OF OUR F";
+  }
+
+  69.6563%,
+  80.7867% {
+    content: "BE A PART OF OUR FA";
+  }
+
+  70.9876%,
+  79.5634% {
+    content: "BE A PART OF OUR FAM";
+  }
+
+  71.8776%,
+  78.3376% {
+    content: "BE A PART OF OUR FAMI";
+  }
+
+  72.6567%,
+  77.1243% {
+    content: "BE A PART OF OUR FAMIL";
+  }
+
+  73.4543%,
+  76.1132% {
+    content: "BE A PART OF OUR FAMILY";
+  }
+
+  /* 68.6945%,
+  81.8978% {
+    content: "BE A PART OF OUR C";
+  }
+
+  69.6563%,
+  80.7867% {
+    content: "BE A PART OF OUR CO";
+  }
+
+  70.9876%,
+  79.5634% {
+    content: "BE A PART OF OUR COM";
+  }
+
+  71.8776%,
+  78.3376% {
+    content: "BE A PART OF OUR COMM";
+  }
+
+  72.6567%,
+  77.1243% {
+    content: "BE A PART OF OUR COMMU";
+  }
+
+  73.4543%,
+  76.1132% {
+    content: "BE A PART OF OUR COMMUN";
+  }
+
+  74.5475%,
+  75.3244% {
+    content: "BE A PART OF OUR COMMUNI";
+  }
+
+  75.2314%,
+  74.3661% {
+    content: "BE A PART OF OUR COMMUNIT";
+  }
+
+  76.1111%,
+  73.6541% {
+    content: "BE A PART OF OUR COMMUNITY";
+  } */
+
+
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.typewriter {
+  --caret: currentcolor;
+}
+
+.typewriter::before {
+  content: "";
+  animation: typing 13.5s infinite;
+}
+
+.typewriter::after {
+  content: "";
+  border-right: 4px solid var(--caret);
+  animation: blink 0.5s linear infinite;
+}
+
+
+
+
+@media (prefers-reduced-motion) {
+  .typewriter::after {
+    animation: none;
+  }
+
+  @keyframes sequencePopup {
+
+    0%,
+    100% {
+      content: "developer";
+    }
+
+    25% {
+      content: "writer";
+    }
+
+    50% {
+      content: "reader";
+    }
+
+    75% {
+      content: "human";
+    }
+  }
+
+  .typewriter::before {
+    content: "developer";
+    animation: sequencePopup 12s linear infinite;
+  }
+}
+
+/*offer box css*/
+.offer-box-red {
+  border: #FF3A2D solid 0.2rem;
+  height: 32rem;
+  margin-bottom: 1rem;
+}
+
+.offer-box-white {
+  height: 32rem;
+  background-color: white;
+  border: white solid 3px;
+  margin-bottom: 1rem;
+}
+
+.offer-icon {
+  border-radius: 50%;
+  border: #e1474d solid 0.1rem;
+  width: 5rem;
+  height: 5rem;
+  margin: 2rem auto;
+}
+
+.offer-icon .icon {
+  color: #e1474d;
+  font-size: 2rem;
+  margin-top: 1.4rem;
+}
+
+.offer-box-red .offer-box-title {
+  font-size: 1.5rem;
+  padding: 1rem;
+  font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+  line-height: 1.8rem;
+}
+
+.offer-box-white .offer-box-title {
+  color: black;
+  font-size: 1.5rem;
+  padding: 1rem;
+  font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+  line-height: 1.8rem;
+
+}
+
+.offer-box-red .offer-box-description {
+  font-size: 0.9rem;
+  padding: 1rem;
+  line-height: 1.5rem;
+  position: relative;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
+
+}
+.offer-box-description a{
+  text-decoration: none;
+  color: #e1474d !important;
+}
+
+.offer-box-white .offer-box-description {
+  color: black;
+  font-size: 0.9rem;
+  padding: 1rem;
+  line-height: 1.5rem;
+  position: relative;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
+
+}
+
+.offer-box-description::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 30%;
+  height: 3px;
+  background-color: #e1474d;
+}

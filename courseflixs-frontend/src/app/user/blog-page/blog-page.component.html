@@ -1,0 +1,88 @@
+<div class="container-fluid main-blog-container">
+    <div class="title-container">
+        <div class="blog-heading">
+            Blogs
+        </div>
+        <div class="blog-subtitle">
+            Unveiling the Enchantment of Digital Products:Mastering Life’s Secrets Through Insightful Blogs
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4" >
+                <div class="blog-left-container">
+                    <div class="input-group">
+                        <input class="form-control border-end-0 border rounded-pill" type="search" value="search"
+                            id="example-search-input">
+                        <span class="input-group-append">
+                            <button class="btn btn-outline-secondary bg-white border-bottom-0 border rounded-pill ms-n5"
+                                type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                    <div class="category-container">
+                        <div class="category-title" [routerLink]="['/blogs']">
+                            Categories
+                        </div>
+                        <div class="category-items">
+                            <div class="category-item" *ngFor="let cat of getBlogCat">
+                                <a (click)="redirectToSamePageURL(cat.category_name)">{{cat.category_name}}</a>
+                                <hr>
+                            </div>
+                          
+                        </div>
+                    </div>
+                    <div class="top-post-container">
+                        <div class="top-post-title">
+                            Top Posts
+                        </div>
+                        <div class="top-posts-blog" *ngFor="let topBlog of getTopBlog;let topCounter=index">
+                            <div class="top-bolg" [routerLink]="['/blog-details',topBlog._id]">
+                                <div class="blog-post-num">
+                                    {{topCounter+1}}
+                                </div>
+                                <div class="blog-post-title">
+                                    {{topBlog.blog_name}}
+                                    <div class="blog-date-cat">
+                                        {{topBlog.category+" "+(topBlog.createdAt | date:'dd-MM-yyyy')}}
+
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 col-lg-8 col-xl-8 col-xxl-8" >
+                <div class="blog-right-container">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6"
+                          *ngFor="let blog of getAllBlogs | paginate: { itemsPerPage: 6, currentPage: p }">
+                            <div class="blog-post-container">
+                                <div class="blog-post" [routerLink]="['/blog-details',blog._id]">
+                                    <div class="blog-image">
+                                        <img [src]="getImageUrl(blog.blog_image)" alt="img">
+                                    </div>
+                                    <div class="blog-post-details">
+                                        <div class="blog-subtitle-cat-date">
+                                            {{blog.category+" "+(blog.createdAt | date:'dd-MM-yyyy')}}
+                                        </div>
+                                        <div class="blog-title">
+                                            {{blog.blog_name}}
+                                        </div>
+                                        <div class="blog-desc" [innerHTML]="(blog.description| slice:1:250)+'...'">
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <pagination-controls (pageChange)="p = $event" class="my-pagination" ></pagination-controls> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

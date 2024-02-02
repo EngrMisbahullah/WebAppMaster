@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="main-new-course">
+        <div class="new-course-title">
+            NEWEST COURSES
+        </div>
+        <div class="row" >
+                <div class="col-md-6 col-lg-3 col-xl-3 col-xxl-3" *ngFor="let pro of newPro" >
+                    <div class="product-item">
+                        <div class="product-image-container">
+                            <img [src]="getProImageUrl(pro?.main_product_image)" [title]="pro?.product_name" class="main-pro-image">
+                            <a [routerLink]="['product-details',pro._id]" class="view-pro"><mat-icon>visibility</mat-icon></a>
+                            <a  class="shop-pro"  data-bs-toggle="modal" data-bs-target="#getInTocuhDialogue"><mat-icon>shop</mat-icon></a>
+
+                        </div>
+                        <div class="product-details">
+                            <div class="product-name">
+                                <a [routerLink]="['product-details',pro._id]" >{{ pro?.product_name | slice:0:1000 }} </a>
+                            </div>
+                            <div>
+                              <!-- <a [routerLink]="['product-details',pro._id]"  class="price-tag">{{pro?.sale_price | currency:'USD'}}</a> -->
+                              <a [routerLink]="['product-details',pro._id]"  class="price-tag">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="browse-pro-container">
+                <a class="btn btn-danger" [routerLink]="['/all-products/New']">Browse All Products </a>
+            </div>
+        </div>
+    </div>
+</div>

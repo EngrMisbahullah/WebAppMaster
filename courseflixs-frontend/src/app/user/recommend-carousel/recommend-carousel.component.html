@@ -1,0 +1,35 @@
+<div class="container">
+
+    <div class="main-top-course">
+
+        <div class="top-course-title">
+            TOP RECOMMENDED COURSES
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <owl-carousel-o [options]="customOptions">
+
+                    <ng-container *ngFor="let recPro of recomProducts">
+                        <ng-template carouselSlide [id]="recPro?._id" class="product-item">
+                            <div class="pro-image-container">
+                                <img [src]="getSliderImageUrl(recPro?.main_product_image)" [title]="recPro?.name" class="main-pro-image">
+                                <a [routerLink]="['product-details',recPro._id]"  class="view-pro"><mat-icon>visibility</mat-icon></a>
+                                <a  class="shop-pro"  data-bs-toggle="modal" data-bs-target="#getInTocuhDialogue"><mat-icon>shop</mat-icon></a>
+                            </div>
+                            <div class="product-details">
+                                <div class="product-name">
+                                    <a [routerLink]="['product-details',recPro._id]" >{{ recPro?.product_name| slice:0:1000 }} </a>
+                                </div>
+                                <div>
+                                    <!-- <a [routerLink]="['product-details',recPro._id]"  class="price-tag">{{recPro?.sale_price  | currency:'USD' }}</a> -->
+                                    <a [routerLink]="['product-details',recPro._id]"  class="price-tag">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ng-container>
+
+                </owl-carousel-o>
+            </div>
+        </div>
+    </div>
+</div>

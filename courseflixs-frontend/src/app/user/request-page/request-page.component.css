@@ -1,0 +1,148 @@
+.main-request-section {
+    background-color: black;
+    width: 100% !important;
+}
+
+.title-container {
+    background-color: #dd3333;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 0rem 0rem 1rem 1rem;
+}
+
+.request-heading {
+    font-size: 2rem !important;
+    position: relative;
+    line-height: 1.8rem;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+    color: white !important;
+    text-align: center;
+    font-weight: bold !important;
+}
+
+.request-heading::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 5%;
+    height: 3px;
+    background-color: black;
+}
+
+.request-subtitle {
+    color: white;
+    text-align: center;
+    padding: 2rem 0rem !important;
+    font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 500;
+    line-height: 1.8rem;
+}
+
+
+.req-form-title {
+    font-size: 1.7rem;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+    color: white;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    line-height: 2rem;
+}
+
+
+.request-form-container {
+    margin: 3rem 0rem;
+}
+
+.request-form-container p {
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.request-form-container mat-form-field {
+    width: 100%;
+}
+
+
+.send-msg-btn {
+    color: white !important;
+    background-color: #e1474d;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+    font-weight: 800;
+    padding: 1.5rem !important;
+    font-size: 1rem;
+
+}
+
+/* comment Area css */
+.msg-container{
+    display: flex;
+    margin-bottom: 2rem;
+}
+.user-msg{
+    margin: auto 1rem;
+    color: white;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+.user-msg span{
+    font-weight: 800;
+    color: #dd3333;
+}
+.comment-date{
+    font-size: 1rem;
+    color: #dd3333;
+}
+.add-comment{
+   text-align: end;
+   margin-bottom: 1rem;
+}
+.add-comment mat-form-field{
+    width: 50%;
+}
+
+/* =======================TOP RECOMMENDED COUSRSE SECTION CSS{{END}}========================== */
+
+/* ==========================================Media  query============================================== */
+/* X-Small devices (portrait phones, less than 576px,mobile) */
+
+@media (max-width: 575.98px) {
+    .request-heading {
+        font-size: 1.7rem !important;
+    
+    }
+    
+}
+
+/* Small devices (landscape phones, less than 768px,ipad) */
+@media (max-width: 767.98px) {
+   
+    .add-comment{
+        text-align: start;
+        margin-bottom: 1rem;
+     }
+     .add-comment mat-form-field{
+         width: 100%;
+     }
+}
+
+
+/* Medium devices (tablets, less than 992px,surface pro) */
+@media (max-width: 991.98px) {
+    
+}
+
+/* // Large devices (desktops=my laptop, less than 1200px) */
+@media (max-width: 1199.98px) {}
+
+/* X-Large devices (large desktops bigger than my laptop, less than 1400px) */
+@media (max-width: 1399.98px) {}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {}
+
+/* ==================================={{END}}================================================= */

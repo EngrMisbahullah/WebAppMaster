@@ -1,0 +1,48 @@
+<div class="container-fluid main-testimo-container" id="testimonial-section">
+    <div class="container">
+        <div class="tetimo-container">
+            <div class="testimo-title">
+                TESTIMONIAL
+
+            </div>
+            <div class="testo-subtitle">
+                Hear what people who are part of our family tells about us
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false"
+                        data-bs-interval="false">
+                        <div class="carousel-inner" *ngFor="let tetimo of getAllTetimoData">
+                            <div class="carousel-item active"  *ngIf="tetimo.testimonial_identifier=='Image'">
+                                <img [src]="getAudioVideoURL(tetimo.testimonial_image)" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" *ngIf="tetimo.testimonial_identifier=='Video'">
+                                <video  controls  class="d-block w-100">
+                                    <source [src]="getAudioVideoURL(tetimo.testimonial_image)" type="video/mp4">
+                                </video>
+                             </div>
+                             <div class="carousel-item" *ngIf="tetimo.testimonial_identifier=='Audio'">
+                                <audio controls  class="d-block w-100">
+                                    <source [src]="getAudioVideoURL(tetimo.testimonial_image)" type="audio/ogg">
+                                    Your browser does not support the audio tag.
+                                  </audio>
+                             </div>
+                            
+                        </div>
+                        <button class="carousel-control-prev" type="button"
+                            data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button"
+                            data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

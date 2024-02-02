@@ -1,0 +1,41 @@
+<div class="container-fluid pro-main-container">
+    <div class="title-container">
+        <div class="pro-heading">
+          Search Products
+        </div>
+      
+    </div>
+    <div class="container">
+        <div class="page-subtitle" style="font-size: 2.5rem;text-align: center;margin: 3rem;line-height: 3rem;">Search Found {{totalPro }}
+            <b>Result(s)</b></div>
+        <div class="row">
+            <ng-container *ngFor="let pro of filterData | paginate: { itemsPerPage: 12, currentPage: p }">
+                <div class="col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <div class="product-item">
+                        <div class="product-image-container">
+                            <img [src]="getProImageUrl(pro.main_product_image)" [title]="pro.product_name"
+                                class="main-pro-image">
+                            <a [routerLink]="['/product-details',pro._id]"
+                                class="view-pro"><mat-icon>visibility</mat-icon></a>
+                            <a class="shop-pro" data-bs-toggle="modal"
+                                data-bs-target="#getInTocuhDialogue"><mat-icon>shop</mat-icon></a>
+                        </div>
+                        <div class="product-details">
+                            <div class="product-name">
+                                <a [routerLink]="['/product-details',pro._id]">{{ pro.product_name }} </a>
+                            </div>
+                            <div>
+                                <a [routerLink]="['/product-details',pro._id]" class="price-tag">{{"300" |
+                                    currency:'$'}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+
+
+            <pagination-controls (pageChange)="p = $event" class="my-pagination"></pagination-controls>
+
+        </div>
+    </div>
+</div>

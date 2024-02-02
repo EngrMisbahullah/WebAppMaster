@@ -1,0 +1,230 @@
+<div class="container-fluid page">
+  <div class="d-flex box p-3 mt-2">Dashboard</div>
+  <div class="content shadow p-3 position-relative">
+    <div class="data">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display cart-icon-sky">category</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">Category</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfCat?getAllDashboardDetailsData?.countOfCat:0}}</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+            </mat-card>
+          </div>
+
+          <div class="col-xxl-3  col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display cart-icon-green">money</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">Revenue</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.orderPriceSum?getAllDashboardDetailsData?.orderPriceSum:0 | currency:'INR'}}</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+            </mat-card>
+          </div>
+
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display cart-icon-violet">inventory</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">TotalProducts</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfTotalPro?getAllDashboardDetailsData?.countOfTotalPro:0}}</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+            </mat-card>
+          </div>
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display cart-icon-orange">person</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">Customers</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfCustomer?getAllDashboardDetailsData?.countOfCustomer:0}}</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+            </mat-card>
+          </div>
+        <!-- </div><br><br> -->
+
+        <!-- <div class="row"> -->
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display cart-icon-orange">subscriptions</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">Subscriber</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfSubscriber?getAllDashboardDetailsData?.countOfSubscriber:0}}</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+            </mat-card>
+          </div>
+
+          <div class="col-xxl-3  col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display cart-icon-violet">moped</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">DeliveredOrder</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.numOfOrder?getAllDashboardDetailsData?.numOfOrder:0}}</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+            </mat-card>
+          </div>
+
+          <div class="col-xxl-3  col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display cart-icon-green">recommended</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">RecommendItem</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfRecommendPro?getAllDashboardDetailsData?.countOfRecommendPro:0}}</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+            </mat-card>
+          </div>
+
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display cart-icon-sky">slideshow</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">SliderProduct</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfShowSlider?getAllDashboardDetailsData?.countOfShowSlider:0}}</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+            </mat-card>
+          </div>
+        <!-- </div><br><br> -->
+
+
+        <!-- <div class="row"> -->
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display cart-icon-green">quiz</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">Testimonial</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfTestimonial?getAllDashboardDetailsData?.countOfTestimonial:0}}</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+            </mat-card>
+          </div>
+
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display cart-icon-green">book</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">TotalBlog</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfTotalBlog?getAllDashboardDetailsData?.countOfTotalBlog:0}}</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+            </mat-card>
+          </div>
+
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display  cart-icon-orange">pending</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">RequestPending</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countPendingRequest?getAllDashboardDetailsData?.countPendingRequest:0}}</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+            </mat-card>
+          </div>
+
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display cart-icon-violet">verified</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">RequestComplete</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countCompleteRequest?getAllDashboardDetailsData?.countCompleteRequest:0}}</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
